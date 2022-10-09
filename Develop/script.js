@@ -23,13 +23,13 @@ function generatePassword() {
 
   //var PLength length gets the users' prefered password length from a user prompt
   var PLength = window.prompt ("How many characters long would you like your password be?")
-console.log(PLength)
 
-//var WantsLowercase gets the user's preference for lower case as a boolean
 
+//var The following 4 "Wants" vars get the user's preferences for what kinds of characters to use in their password. For  example WantsLowercase gets the user's preference for lower case as a boolean
 
 var WantsUppers = window.confirm ("Would you like your password to contain UPPER-case letters?")
 console.log(WantsUppers)
+
 var WantsLowers = window.confirm ("Would you like your password to also contain LOWER-case letters?")
 console.log(WantsLowers)
 
@@ -39,14 +39,17 @@ console.log(WantsNumbers)
 var WantsSpecial = window.confirm ("Would you like your password to also contain Special Characters?")
 console.log(WantsSpecial)
 
+//IF all these confirms are false, the program should show an error and end
 
-//These are my libraries of characters that go into forming tha password character pool. Any number of libraries can be chosen. 
+
+//These are the libraries of characters that go into forming tha password character pool. Any number of libraries are chosen by the user with the previous "wants" vars. 
 var AllTheCaps = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",]
 var AllTheLowers = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var AllTheNumbers = ["0","1","2","3","4","5","6","7","8","9"]
-var AllTheSpecial = ["!","@","#","$","%","^","&","*","(",")",]
+var AllTheSpecial = ["!","@","#","$","%","^","&","*","(",")","~","{","}","[","]",":",";","<",">","?","+","=",]
 
-var CharPool = [] //creates an empty array, all ready to be populated by any of the following 4 libraries' worth of characters that the user wants, if they want them
+//Now that the user has selected from 4 types of characters, lets put the selctions all in one place- the character pool aka "CharPool"
+var CharPool = [] //creates an empty array, all ready to be populated by any of the following 4 libraries' worth of characters that the user wants, if they want them. The push method takes an array and tacks on another entire array onto it without changing its name or creating a new array. 
 if (WantsUppers) {
 CharPool.push(...AllTheCaps)
 }
@@ -78,59 +81,26 @@ for (let i = 0; i <PLength; i++) //tacks single letters on the end of the passwo
 
 console.log(PasswordArray)
 
+var FinalPassword =PasswordArray.toString()
 
 
 
-var FinalPassword = (PasswordArray.join)
+//In the following snippet, (FinalPassword.replace(/,/g,""))//takes the commas out of Final Password after toString made a string full of commas
 
-console.log (FinalPassword)
-
-
-//returns a random integer from 0 to CharPool Length (or length minus one?) this random number will help PickRand pick a random character 
-//console.log(rando) 
-
-//var PickRand= Charpick[RandIntex]  //Pickrand will take the value of the character in the character pool at the index chosen randomly in rando
-
-
-//we need to use RandIndex over and over somehow and populate an array  by concating  then finally turning the array into a string- var string = YourPassWord
-
-
-//    console.log(AllUpperCases[randomLetter] )
-
-
-
-
+window.alert("Your suggested password:" + FinalPassword.replace(/,/g,""))
 
 
 
 }
 
 
-//I will need an array that contains 4 booleans (yes or no to character types) and a number (the password length)
+// WHEN I answer each prompt
+// THEN my input should be validated and at least one character type should be selected
 
-//I will need to collect the booleans and number from the user using prompts
-
-//I will need a functin that randomly select characters from character libraries and then strings them together into a password, and then outputs the password
-
-
-
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
 
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
 
-// WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
 
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
 
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
