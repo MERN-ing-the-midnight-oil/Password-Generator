@@ -1,9 +1,12 @@
 Summary 
+  This program generates a suggested password for a user. The user chooses what types of characters they want and how long the password should be, adn the program randomly selects from those character types to create and display a suggested password. 
 
 How to Install/Use
-
+  Open main.html in your browser. 
 
 Deployed link
-
+  https://noctiluca-scintillans.github.io/Password-Generator/
+  
 Screenshot
-  <img width="1438" alt="Screen Shot 2022-10-12 at 12 15 55 PM" src="https://user-images.githubusercontent.com/113305309/195431509-1289442d-0e76-4e61-931d-ee8a83db7ce7.png">
+  ![Password Generator Screenshot](https://user-images.githubusercontent.com/113305309/195432261-dd7c5642-5944-4e95-b1d8-064328e8edde.png)
+
