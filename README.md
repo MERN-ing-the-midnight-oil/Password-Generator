@@ -1,1 +1,8 @@
-# Password Generator Starter Code
+Summary 
+
+How to Install/Use
+
+
+Deployed link
+
+Screenshot
